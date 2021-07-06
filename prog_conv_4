@@ -1,0 +1,202 @@
+
+
+
+
+
+
+
+
+
+
+_______________________
+
+# Simplified version of below
+
+array = ["Abe", "Ben", "Cecil", "Dee"]
+ 
+array.length.times { |index|
+  puts array[index]
+}
+_____________
+
+# This & below output the same but returns different
+# This return 4 & below return nil
+
+array = ["Abe", "Ben", "Cecil", "Dee"]
+
+length = array.length
+
+length.times do |index|
+  puts array[index]
+end
+
+_____________
+
+# This & ABOVE output the same but returns different
+# This return nil & ABOVE return 4
+array = ["Abe", "Ben", "Cecil", "Dee"]
+
+counter = 0
+
+while array[counter] do
+  puts array[counter]
+  counter += 1
+end
+
+_______________________
+
+# This & below are Block Parameters
+
+5.times do |any_name|
+  puts any_name
+end
+_______
+
+array = ["z", "x", "c"]
+length = array.length
+
+length.times do |any_name|
+  puts array[any_name]
+end
+
+
+__________________________
+
+# Changing between strings and arrays
+
+# converts this string to array of words
+%w[this is also a test] #=> ["this", "is", "also", "a", "test"]
+
+# converts this array to a string
+["this", "is", "a", "test"].join(' ') #=> "this is a test"
+_______________________
+
+# List methods that preserve the original unless bang (!)
+
+ .sort!  .reverse!   .first  .last   .include?   .size
+_______________________
+
+# NUMBER .sort preserves the original array and returns an entirely new array
+
+shark_num = [30, 7, 11, 92, 50]
+
+pack = shark_num.sort
+
+_______________________
+
+# STRING .sort preserves the original array and returns an entirely new array
+
+shark_family = ["Baby Shark", "Mama Shark", "Papa Shark", "Grandma Shark", "Grandpa Shark"]
+
+answ = shark_family.sort
+
+_______________________
+
+# NOTE: To remove items/elements from the middle of arrays
+#https://docs.ruby-lang.org/en/2.0.0/Array.html#method-i-delete_at
+
+_______________________
+
+# Shift Method removes item/element from front of array
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+lil_bub = famous_cats.shift
+ 
+p famous_cats
+#=> ["grumpy cat", "Maru"]
+p lil_bub
+#=> lil' bub
+
+_______________________
+
+# Pop Method removes item/element from end of array
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+maru_cat = famous_cats.pop
+ 
+p famous_cats
+#=> ["lil' bub", "grumpy cat"]
+p maru_cat
+#=> Maru
+
+_______________________
+
+# Unshift method adds item/element to front of array
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+ 
+famous_cats.unshift("nala cat")
+ 
+p famous_cats
+#=> ["nala cat", "lil' bub", "grumpy cat", "Maru"]
+
+_______________________
+
+# Push method add items/elements to end of array
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+ 
+famous_cats.push("nala cat")
+ 
+p famous_cats
+#=> ["lil' bub", "grumpy cat", "Maru", "nala cat"]
+
+_______________________
+
+# Shovel method the Preferred way to add items/elements to end of array
+
+famous_cats = ["lil' bub", "grumpy cat", "Maru"]
+ 
+famous_cats << "nala cat"
+ 
+p famous_cats
+#=> ["lil' bub", "grumpy cat", "Maru", "nala cat"]
+
+_______________________
+
+# Demonstrates access to the data in the hash below
+
+english_music_by_city[:manchester][0][:band_name] #=> "The Smiths"
+english_music_by_city[:manchester][0][:member_names] #=> ["Morrissey", "Johnny", "Andy", "Mike"]
+ 
+puts "There were #{english_music_by_city[:manchester][0][:member_names].length} members in #{english_music_by_city[:manchester][0][:band_name]}"
+#=> "There were 4 members in The Smiths"
+
+
+
+_______________________
+
+# english_music_by_city is a hash
+# holding an array symbol :manchester
+# holding 2 hashes Smiths & Division
+
+english_music_by_city = {
+  :manchester => [
+    {
+      :band_name => "The Smiths",
+      :member_names => ["Morrissey", "Johnny", "Andy", "Mike"]
+    },
+    {
+      :band_name => "Joy Division",
+      :member_names => ["Peter", "Stephen", "Bernard", "Ian"]
+    },
+  ]
+}
+
+
+
+_______________________
+
+# array
+the_beatles = ["John", "Paul", "Ringo", "George"]
+
+# hash
+english_bands_by_city = {
+ :guitar1 =>  "John",
+ :bass =>  "Paul",
+ :drums =>  "Ringo",
+ :guitar2 => "George"
+}
+
+
+
